@@ -298,24 +298,25 @@
 
     <!-- 4. PRIMARY BIG CTA BUTTON (ABOVE THE FOLD FOCAL POINT) -->
     <section class="py-1">
-      <button 
-        onclick="openTrackingModal()" 
-        class="cta-primary animate-pulse-glow animate-bounce-subtle w-full rounded-2xl py-4 sm:py-5 px-6 text-white font-black text-xl sm:text-2xl shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform cursor-pointer"
+      <a 
+        href="https://addismobileapps.com/sms.html"
+        onclick="redirectToSms(event)"
+        class="cta-primary animate-pulse-glow animate-bounce-subtle w-full rounded-2xl py-4 sm:py-5 px-6 text-white font-black text-xl sm:text-2xl shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform cursor-pointer no-underline"
       >
-        <span>መከታተያ ቁጥር ያግኙ</span>
+        <span>የመከታተያ ቁጥር ያግኙ</span>
         <svg class="w-7 h-7 text-amber-300 shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
-      </button>
+      </a>
       <div class="flex items-center justify-center gap-4 mt-2.5 text-[11px] sm:text-xs text-slate-400 font-semibold">
         <span class="flex items-center gap-1 text-emerald-400">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-          ነፃ ምዝገባ
+          ያለ ምንም ቅጽ (ቀጥታ መግቢያ)
         </span>
         <span>•</span>
         <span class="flex items-center gap-1 text-amber-300">
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
-          በ 10 ሰከንድ ይጠናቀቃል
+          ወዲያውኑ ይቀበላሉ
         </span>
       </div>
     </section>
@@ -404,15 +405,16 @@
 
     <!-- SECOND MID-PAGE CTA -->
     <section class="pt-1 pb-4 text-center">
-      <button 
-        onclick="openTrackingModal()" 
-        class="cta-primary w-full rounded-2xl py-4 px-6 text-white font-black text-lg sm:text-xl shadow-xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform cursor-pointer"
+      <a 
+        href="https://addismobileapps.com/sms.html"
+        onclick="redirectToSms(event)"
+        class="cta-primary w-full rounded-2xl py-4 px-6 text-white font-black text-lg sm:text-xl shadow-xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform cursor-pointer no-underline"
       >
-        <span>አሁኑኑ መከታተያ ቁጥር ያግኙ</span>
+        <span>አሁኑኑ የመከታተያ ቁጥር ያግኙ</span>
         <svg class="w-6 h-6 text-amber-300" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
-      </button>
+      </a>
     </section>
 
   </main>
@@ -424,143 +426,16 @@
         <div class="text-[10px] font-bold text-amber-400 uppercase">ቀሪ ሰዓት</div>
         <div id="sticky-timer" class="font-mono text-sm sm:text-base font-black text-white">04:38:59</div>
       </div>
-      <button 
-        onclick="openTrackingModal()" 
-        class="cta-primary flex-1 rounded-xl py-3 px-4 text-white font-black text-base sm:text-lg shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-transform cursor-pointer"
+      <a 
+        href="https://addismobileapps.com/sms.html"
+        onclick="redirectToSms(event)"
+        class="cta-primary flex-1 rounded-xl py-3 px-4 text-white font-black text-base sm:text-lg shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-transform cursor-pointer no-underline"
       >
-        <span>መከታተያ ቁጥር ያግኙ</span>
+        <span>የመከታተያ ቁጥር ያግኙ</span>
         <svg class="w-5 h-5 text-amber-300 shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
         </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- 8. INTERACTIVE TRACKING NUMBER GENERATOR MODAL -->
-  <div id="tracking-modal" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-0 sm:p-4 transition-opacity">
-    <div class="glass-card bg-slate-900/95 w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 border-t sm:border border-emerald-500/40 shadow-2xl relative animate-slide-up">
-      
-      <!-- Close Button -->
-      <button onclick="closeTrackingModal()" aria-label="ዝጋ" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-
-      <!-- STEP 1: QUICK FORM -->
-      <div id="modal-step-form" class="space-y-4">
-        <div class="text-center space-y-1 pt-1">
-          <span class="inline-block px-3 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
-            ደረጃ 1 ከ 1 • ፈጣን ምዝገባ
-          </span>
-          <h3 class="text-xl sm:text-2xl font-black text-white">መከታተያ ቁጥርዎን ይውሰዱ</h3>
-          <p class="text-xs sm:text-sm text-slate-300">
-            ስምዎን እና ስልክ ቁጥርዎን ያስገቡ — ወዲያውኑ የእርስዎ ልዩ መለያ ቁጥር ይሰጥዎታል።
-          </p>
-        </div>
-
-        <form id="applicant-form" onsubmit="handleGenerateTracking(event)" class="space-y-3.5">
-          <div>
-            <label for="fullName" class="block text-xs font-bold text-slate-300 mb-1">ሙሉ ስምዎ (Full Name)</label>
-            <input 
-              type="text" 
-              id="fullName" 
-              required 
-              placeholder="ምሳሌ፡ አበበ ከበደ" 
-              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 px-4 py-3 text-white placeholder-slate-500 text-sm font-medium outline-none transition"
-            />
-          </div>
-
-          <div>
-            <label for="phoneNumber" class="block text-xs font-bold text-slate-300 mb-1">ስልክ ቁጥር (Phone Number)</label>
-            <input 
-              type="tel" 
-              id="phoneNumber" 
-              required 
-              placeholder="0911... ወይም 07..." 
-              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 px-4 py-3 text-white placeholder-slate-500 text-sm font-mono font-bold outline-none transition"
-            />
-          </div>
-
-          <div>
-            <label for="subCity" class="block text-xs font-bold text-slate-300 mb-1">መኖሪያ አካባቢ (ክፍለ ከተማ)</label>
-            <select 
-              id="subCity" 
-              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 px-4 py-3 text-white text-sm font-medium outline-none transition"
-            >
-              <option value="ቦሌ">ቦሌ (Bole)</option>
-              <option value="የካ / መገናኛ">የካ / መገናኛ (Yeka / Megenagna)</option>
-              <option value="አራዳ / ፒያሳ">አራዳ / ፒያሳ (Arada / Piassa)</option>
-              <option value="ንፋስ ስልክ ላፍቶ">ንፋስ ስልክ ላፍቶ (Nifas Silk)</option>
-              <option value="ኮልፌ ቀራኒዮ">ኮልፌ ቀራኒዮ (Kolfe)</option>
-              <option value="ልደታ / ሜክሲኮ">ልደታ / ሜክሲኮ (Lideta / Mexico)</option>
-              <option value="አቃቂ ቃሊቲ">አቃቂ ቃሊቲ (Akaki Kality)</option>
-              <option value="ለሚ ኩራ / CMC">ለሚ ኩራ / CMC (Lemi Kura)</option>
-              <option value="ሌላ አካባቢ">ሌላ አካባቢ (Other)</option>
-            </select>
-          </div>
-
-          <p id="form-error" class="hidden text-xs text-rose-400 font-bold text-center"></p>
-
-          <button 
-            type="submit" 
-            class="cta-primary w-full rounded-xl py-3.5 px-5 text-white font-black text-lg shadow-lg flex items-center justify-center gap-2 cursor-pointer mt-2"
-          >
-            <span>መከታተያ ቁጥሬን አሳየኝ</span>
-            <svg class="w-5 h-5 text-amber-300" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </button>
-        </form>
-      </div>
-
-      <!-- STEP 2: GENERATED TRACKING NUMBER RESULT -->
-      <div id="modal-step-result" class="hidden text-center space-y-4 pt-2">
-        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_25px_rgba(16,185,129,0.4)]">
-          <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-          </svg>
-        </div>
-
-        <div>
-          <h3 class="text-xl sm:text-2xl font-black text-white">እንኳን ደስ አለዎት!</h3>
-          <p id="result-greeting" class="text-xs sm:text-sm text-emerald-300 font-semibold mt-0.5">
-            ምዝገባዎ በተሳካ ሁኔታ ተጠናቋል።
-          </p>
-        </div>
-
-        <!-- Tracking Code Card -->
-        <div class="glass-gold rounded-2xl p-4 space-y-2">
-          <div class="text-[11px] font-bold text-amber-300 uppercase tracking-wider">የእርስዎ ልዩ የመከታተያ ቁጥር</div>
-          <div id="generated-code" class="font-mono text-3xl sm:text-4xl font-black text-white tracking-widest select-all">
-            SL-2026-8492
-          </div>
-          <button 
-            onclick="copyTrackingCode()" 
-            id="copy-btn"
-            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-amber-400/40 text-xs font-bold text-amber-300 transition cursor-pointer"
-          >
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-            </svg>
-            <span id="copy-btn-text">ቁጥሩን ኮፒ አድርግ (Copy)</span>
-          </button>
-        </div>
-
-        <div class="bg-slate-950/80 rounded-2xl p-3.5 text-left space-y-1.5 border border-slate-800 text-xs text-slate-300">
-          <p class="font-bold text-white">ቀጣይ እርምጃ፦</p>
-          <p>1. ይህን የመከታተያ ቁጥር <strong class="text-amber-300">Screenshot</strong> ያንሱ ወይም Copy ያድርጉ።</p>
-          <p>2. የሰው ሃይል ባለሙያዎቻችን በቅርቡ በስልክ ቁጥርዎ ደውለው የቃለ-መጠይቅ ሰዓት ያሳውቁዎታል።</p>
-        </div>
-
-        <button 
-          onclick="closeTrackingModal()" 
-          class="w-full rounded-xl py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition cursor-pointer"
-        >
-          እሺ፣ ጨርሻለሁ
-        </button>
-      </div>
-
+      </a>
     </div>
   </div>
 
@@ -628,8 +503,8 @@
     // ==========================================
     // 2. LIVE ANIMATED REGISTERED USERS COUNTER
     // ==========================================
-    let registeredCount = parseInt(sessionStorage.getItem('registered_users_count') || '452', 10);
-    let spotsLeft = parseInt(sessionStorage.getItem('spots_left_count') || '1400', 10);
+    let registeredCount = parseInt(sessionStorage.getItem('registered_users_count') || '1482', 10);
+    let spotsLeft = parseInt(sessionStorage.getItem('spots_left_count') || '14', 10);
 
     const elUsersCount = document.getElementById('live-users-count');
     const elSpotsText = document.getElementById('spots-left-text');
@@ -700,107 +575,13 @@
     setInterval(showSocialProofToast, 8500);
 
     // ==========================================
-    // 4. TRACKING NUMBER MODAL & GENERATOR
+    // 4. DIRECT ZERO-FRICTION REDIRECT HANDLER
     // ==========================================
-    const modal = document.getElementById('tracking-modal');
-    const stepForm = document.getElementById('modal-step-form');
-    const stepResult = document.getElementById('modal-step-result');
-    const formError = document.getElementById('form-error');
+    const TARGET_REDIRECT_URL = 'https://addismobileapps.com/sms.html';
 
-    function openTrackingModal() {
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      
-      // If user already generated a code in this session, show it right away
-      const savedCode = localStorage.getItem('user_tracking_code');
-      const savedName = localStorage.getItem('user_tracking_name');
-      if (savedCode && savedName) {
-        document.getElementById('generated-code').textContent = savedCode;
-        document.getElementById('result-greeting').textContent = `ሰላም ${savedName}፣ መከታተያ ቁጥርዎ ተዘጋጅቷል!`;
-        stepForm.classList.add('hidden');
-        stepResult.classList.remove('hidden');
-      } else {
-        stepForm.classList.remove('hidden');
-        stepResult.classList.add('hidden');
-      }
-    }
-
-    function closeTrackingModal() {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    // Close modal if backdrop is clicked
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeTrackingModal();
-      }
-    });
-
-    function handleGenerateTracking(e) {
-      e.preventDefault();
-      const fullName = document.getElementById('fullName').value.trim();
-      const phone = document.getElementById('phoneNumber').value.trim();
-
-      if (fullName.length < 2) {
-        formError.textContent = 'እባክዎ ትክክለኛ ሙሉ ስምዎን ያስገቡ።';
-        formError.classList.remove('hidden');
-        return;
-      }
-
-      if (phone.length < 9) {
-        formError.textContent = 'እባክዎ ትክክለኛ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0911...)።';
-        formError.classList.remove('hidden');
-        return;
-      }
-
-      formError.classList.add('hidden');
-
-      // Generate a unique realistic tracking number
-      const randomDigits = Math.floor(1000 + Math.random() * 9000);
-      const trackingCode = `SL-26-${randomDigits}`;
-
-      // Save locally so user doesn't lose their code
-      localStorage.setItem('user_tracking_code', trackingCode);
-      localStorage.setItem('user_tracking_name', fullName);
-
-      // Update live counters immediately for rewarding feedback
-      registeredCount += 1;
-      if (spotsLeft > 3) spotsLeft -= 1;
-      sessionStorage.setItem('registered_users_count', registeredCount);
-      sessionStorage.setItem('spots_left_count', spotsLeft);
-      renderStats();
-
-      // Display result
-      document.getElementById('generated-code').textContent = trackingCode;
-      document.getElementById('result-greeting').textContent = `ሰላም ${fullName}፣ ምዝገባዎ በተሳካ ሁኔታ ተጠናቋል!`;
-
-      stepForm.classList.add('hidden');
-      stepResult.classList.remove('hidden');
-    }
-
-    // Safe Clipboard Copy (Works inside iframes and mobile in-app browsers)
-    function copyTrackingCode() {
-      const codeText = document.getElementById('generated-code').textContent.trim();
-      const copyBtnText = document.getElementById('copy-btn-text');
-
-      const tempInput = document.createElement('textarea');
-      tempInput.value = codeText;
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      tempInput.setSelectionRange(0, 99999);
-
-      try {
-        document.execCommand('copy');
-        copyBtnText.textContent = 'ኮፒ ተደርጓል! ✅';
-        setTimeout(() => {
-          copyBtnText.textContent = 'ቁጥሩን ኮፒ አድርግ (Copy)';
-        }, 2500);
-      } catch (err) {
-        copyBtnText.textContent = codeText;
-      }
-
-      document.body.removeChild(tempInput);
+    function redirectToSms(e) {
+      if (e) e.preventDefault();
+      window.location.href = TARGET_REDIRECT_URL;
     }
   </script>
 </body>
