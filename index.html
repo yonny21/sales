@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="am" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>የሽያጭ ሰራተኛ እንፈልጋለን | ደሞዝ 12,000+ ብር</title>
+  
+  <!-- Google Fonts: Noto Sans Ethiopic & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800;900&family=Noto+Sans+Ethiopic:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Tailwind Config for Custom Fonts & Animations -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Ethiopic"', 'Inter', 'sans-serif'],
+            mono: ['Inter', 'monospace'],
+          },
+          colors: {
+            obsidian: '#060913',
+            midnight: '#0c1222',
+            emeraldGlow: '#10b981',
+            goldAccent: '#f59e0b',
+          },
+          animation: {
+            'shimmer': 'shimmer 2.4s infinite linear',
+            'pulse-glow': 'pulseGlow 2s infinite ease-in-out',
+            'float-slow': 'floatSlow 6s ease-in-out infinite',
+            'bounce-subtle': 'bounceSubtle 2.2s infinite ease-in-out',
+            'ping-slow': 'ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite',
+          },
+          keyframes: {
+            shimmer: {
+              '0%': { transform: 'translateX(-150%) skewX(-20deg)' },
+              '100%': { transform: 'translateX(250%) skewX(-20deg)' },
+            },
+            pulseGlow: {
+              '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.45), 0 0 40px rgba(16, 185, 129, 0.2)' },
+              '50%': { boxShadow: '0 0 32px rgba(16, 185, 129, 0.8), 0 0 60px rgba(245, 158, 11, 0.3)' },
+            },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+            bounceSubtle: {
+              '0%, 100%': { transform: 'scale(1)' },
+              '50%': { transform: 'scale(1.025)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom High-Conversion Styling */
+    body {
+      background-color: #060913;
+      color: #f8fafc;
+      font-family: 'Noto Sans Ethiopic', 'Inter', sans-serif;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Ambient Mesh Background */
+    .ambient-bg {
+      background: 
+        radial-gradient(circle at 15% 10%, rgba(16, 185, 129, 0.16) 0%, transparent 45%),
+        radial-gradient(circle at 85% 25%, rgba(245, 158, 11, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 50% 80%, rgba(6, 182, 212, 0.12) 0%, transparent 50%),
+        #060913;
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    .glass-gold {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(16, 185, 129, 0.12) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.18);
+    }
+
+    /* Timer Flip / Tick Effect */
+    .digit-box {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 8px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .digit-pulse {
+      animation: digitPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes digitPop {
+      0% { transform: scale(1.12); color: #34d399; }
+      100% { transform: scale(1); }
+    }
+
+    /* Primary CTA Button Gradient & Shimmer */
+    .cta-primary {
+      background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+      border: 1px solid rgba(110, 231, 183, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-primary::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.45),
+        transparent
+      );
+      animation: shimmer 2.2s infinite linear;
+    }
+
+    /* Progress Bar Striped Animation */
+    .progress-striped {
+      background-image: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+      );
+      background-size: 1rem 1rem;
+      animation: moveStripes 1s linear infinite;
+    }
+
+    @keyframes moveStripes {
+      0% { background-position: 1rem 0; }
+      100% { background-position: 0 0; }
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #060913;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="ambient-bg min-h-screen pb-28 selection:bg-emerald-500 selection:text-white">
+
+  <!-- 1. TOP URGENCY STICKY HEADER -->
+  <header class="sticky top-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-emerald-500/20 px-3 py-2.5">
+    <div class="max-w-lg mx-auto flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping-slow absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+        </span>
+        <span class="text-xs sm:text-sm font-bold text-emerald-300 tracking-wide">
+          ምዝገባ ክፍት ነው — የተወሰነ ቦታ ብቻ!
+        </span>
+      </div>
+      <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 whitespace-nowrap">
+        አዲስ አበባ
+      </span>
+    </div>
+  </header>
+
+  <!-- LIVE SOCIAL PROOF TOAST (Floating Notification) -->
+  <div id="toast-container" class="fixed top-14 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-md pointer-events-none transition-all duration-500 opacity-0 -translate-y-4">
+    <div class="glass-card rounded-2xl px-3.5 py-2.5 flex items-center gap-3 border-emerald-500/30 shadow-xl">
+      <div class="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-400 shrink-0">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+        </svg>
+      </div>
+      <div class="flex-1 min-w-0">
+        <p id="toast-text" class="text-xs sm:text-sm font-semibold text-white truncate">
+          አቤል ከቦሌ አሁን መከታተያ ቁጥር ወስዷል ✅
+        </p>
+        <p id="toast-time" class="text-[10px] text-emerald-400 font-medium">ልክ አሁን • የተረጋገጠ ምዝገባ</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER (Mobile-First Focused) -->
+  <main class="max-w-lg mx-auto px-4 pt-5 space-y-5">
+
+    <!-- 2. HERO SECTION -->
+    <section class="text-center space-y-4 relative">
+      <!-- Verified Job Tag -->
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/80 text-xs font-semibold text-slate-300">
+        <svg class="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+        </svg>
+        <span>አስቸኳይ ክፍት የስራ ቦታ ማስታወቂያ</span>
+      </div>
+
+      <!-- Bold Headline -->
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
+        የሽያጭ ሰራተኛ <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-amber-300">እንፈልጋለን!</span>
+      </h1>
+
+      <!-- High-Impact Salary Badge -->
+      <div class="glass-gold rounded-2xl p-4 relative overflow-hidden transform transition hover:scale-[1.01]">
+        <div class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-1">
+          ወርሃዊ መነሻ ደሞዝ እና ጥቅማጥቅም
+        </div>
+        <div class="text-2xl sm:text-3xl font-black text-white flex items-center justify-center gap-2 flex-wrap">
+          <span class="text-amber-400 drop-shadow">ደሞዝ 12,000 ብር</span>
+          <span class="text-emerald-300">እና ከዛ በላይ</span>
+        </div>
+        <div class="mt-1.5 inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-emerald-200 bg-emerald-950/70 px-3 py-1 rounded-full border border-emerald-500/30">
+          <span>+ ከፍተኛ የሽያጭ ኮሚሽን እና ቦነስ</span>
+        </div>
+      </div>
+
+      <!-- Quick Value Pills -->
+      <div class="grid grid-cols-3 gap-2 pt-1">
+        <div class="glass-card rounded-xl p-2.5 text-center">
+          <div class="text-emerald-400 font-extrabold text-sm sm:text-base">ልምድ</div>
+          <div class="text-[11px] sm:text-xs text-slate-300 font-medium">አያስፈልግም</div>
+        </div>
+        <div class="glass-card rounded-xl p-2.5 text-center">
+          <div class="text-amber-400 font-extrabold text-sm sm:text-base">ነፃ ስልጠና</div>
+          <div class="text-[11px] sm:text-xs text-slate-300 font-medium">በአጭር ጊዜ</div>
+        </div>
+        <div class="glass-card rounded-xl p-2.5 text-center">
+          <div class="text-cyan-400 font-extrabold text-sm sm:text-base">ቋሚ ስራ</div>
+          <div class="text-[11px] sm:text-xs text-slate-300 font-medium">ፈጣን ቅጥር</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. HIGHLY ANIMATED LIVE COUNTDOWN TIMER -->
+    <section class="glass-card rounded-3xl p-4 sm:p-5 border-emerald-500/25 relative overflow-hidden">
+      <div class="flex items-center justify-between mb-3">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-ping"></span>
+          <h2 class="text-sm sm:text-base font-extrabold text-white">የምዝገባ ማብቂያ ሰዓት</h2>
+        </div>
+        <span class="text-[11px] font-bold text-rose-400 bg-rose-500/15 px-2.5 py-0.5 rounded-full border border-rose-500/30">
+          ሰዓቱ እያለቀ ነው!
+        </span>
+      </div>
+
+      <!-- Timer Grid -->
+      <div class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+        <!-- Hours -->
+        <div class="digit-box rounded-2xl py-3 px-1">
+          <div id="cd-hours" class="font-mono text-2xl sm:text-3xl font-black text-white tracking-wider">04</div>
+          <div class="text-[11px] font-bold text-slate-400 mt-0.5">ሰዓት</div>
+        </div>
+        <!-- Minutes -->
+        <div class="digit-box rounded-2xl py-3 px-1">
+          <div id="cd-minutes" class="font-mono text-2xl sm:text-3xl font-black text-white tracking-wider">38</div>
+          <div class="text-[11px] font-bold text-slate-400 mt-0.5">ደቂቃ</div>
+        </div>
+        <!-- Seconds -->
+        <div class="digit-box rounded-2xl py-3 px-1 border-emerald-400/50">
+          <div id="cd-seconds" class="font-mono text-2xl sm:text-3xl font-black text-emerald-400 tracking-wider">59</div>
+          <div class="text-[11px] font-bold text-emerald-300/80 mt-0.5">ሰከንድ</div>
+        </div>
+        <!-- Tenths / Milliseconds for High Motion Urgency -->
+        <div class="digit-box rounded-2xl py-3 px-1 border-amber-400/40">
+          <div id="cd-ms" class="font-mono text-2xl sm:text-3xl font-black text-amber-400 tracking-wider">90</div>
+          <div class="text-[11px] font-bold text-amber-300/80 mt-0.5">ማይክሮ</div>
+        </div>
+      </div>
+
+      <p class="text-center text-xs text-slate-300 mt-3 font-medium">
+        ሰዓቱ ከማለቁ በፊት ከታች ያለውን ቁልፍ ተጭነው <span class="text-emerald-400 font-bold">የመከታተያ ቁጥርዎን</span> ይያዙ!
+      </p>
+    </section>
+
+    <!-- 4. PRIMARY BIG CTA BUTTON (ABOVE THE FOLD FOCAL POINT) -->
+    <section class="py-1">
+      <button 
+        onclick="openTrackingModal()" 
+        class="cta-primary animate-pulse-glow animate-bounce-subtle w-full rounded-2xl py-4 sm:py-5 px-6 text-white font-black text-xl sm:text-2xl shadow-2xl flex items-center justify-center gap-3 active:scale-95 transition-transform cursor-pointer"
+      >
+        <span>መከታተያ ቁጥር ያግኙ</span>
+        <svg class="w-7 h-7 text-amber-300 shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+      <div class="flex items-center justify-center gap-4 mt-2.5 text-[11px] sm:text-xs text-slate-400 font-semibold">
+        <span class="flex items-center gap-1 text-emerald-400">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+          ነፃ ምዝገባ
+        </span>
+        <span>•</span>
+        <span class="flex items-center gap-1 text-amber-300">
+          <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+          በ 10 ሰከንድ ይጠናቀቃል
+        </span>
+      </div>
+    </section>
+
+    <!-- 5. ANIMATED LIVE REGISTERED USERS & CAPACITY BAR -->
+    <section class="glass-card rounded-3xl p-4 sm:p-5 space-y-3.5">
+      <div class="flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-xs font-bold text-emerald-400 uppercase">ቀጥታ የምዝገባ መረጃ</span>
+          </div>
+          <h3 class="text-sm sm:text-base font-extrabold text-white mt-0.5">
+            እስካሁን የተመዘገቡ ሰዎች
+          </h3>
+        </div>
+
+        <!-- Live Animated Counter Pill -->
+        <div class="bg-slate-900/90 border border-emerald-500/40 rounded-2xl px-3.5 py-2 text-right shadow-inner">
+          <div class="flex items-center gap-1.5">
+            <span id="live-users-count" class="font-mono text-2xl sm:text-3xl font-black text-emerald-400 transition-transform duration-300">1,482</span>
+            <span class="text-xs font-bold text-emerald-300 bg-emerald-500/20 px-1.5 py-0.5 rounded">+1</span>
+          </div>
+          <div class="text-[10px] text-slate-400 font-semibold">መከታተያ ቁጥር የወሰዱ</div>
+        </div>
+      </div>
+
+      <!-- Remaining Spots Progress Bar -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between text-xs font-bold">
+          <span class="text-amber-300">91% ቦታ ተይዟል</span>
+          <span id="spots-left-text" class="text-rose-400">14 ክፍት ቦታዎች ብቻ ቀርተዋል!</span>
+        </div>
+        <div class="w-full h-3.5 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-700/80">
+          <div id="capacity-bar" class="h-full bg-gradient-to-r from-emerald-500 via-amber-400 to-rose-500 rounded-full progress-striped transition-all duration-700" style="width: 91%;"></div>
+        </div>
+      </div>
+
+      <!-- Avatar Stack + Live Viewers -->
+      <div class="pt-1 flex items-center justify-between border-t border-slate-800/80 text-xs text-slate-300">
+        <div class="flex items-center gap-2">
+          <div class="flex -space-x-2">
+            <div class="w-6 h-6 rounded-full bg-emerald-600 border border-slate-900 flex items-center justify-center text-[10px] font-bold text-white">አ</div>
+            <div class="w-6 h-6 rounded-full bg-amber-600 border border-slate-900 flex items-center justify-center text-[10px] font-bold text-white">ሰ</div>
+            <div class="w-6 h-6 rounded-full bg-cyan-600 border border-slate-900 flex items-center justify-center text-[10px] font-bold text-white">ዳ</div>
+            <div class="w-6 h-6 rounded-full bg-purple-600 border border-slate-900 flex items-center justify-center text-[10px] font-bold text-white">ሜ</div>
+          </div>
+          <span class="font-medium text-slate-300">አሁን <strong id="active-viewers" class="text-white">68</strong> ሰዎች ገጹን እያዩት ነው</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. JOB DETAILS & REQUIREMENTS (SCANNABLE CARDS) -->
+    <section class="space-y-3">
+      <h3 class="text-base sm:text-lg font-extrabold text-white px-1 flex items-center gap-2">
+        <span class="w-1.5 h-5 bg-emerald-400 rounded-full"></span>
+        <span>የስራው ዝርዝር እና ጥቅማጥቅሞች</span>
+      </h3>
+
+      <div class="glass-card rounded-3xl p-4 sm:p-5 space-y-3.5">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <h4 class="font-bold text-white text-sm sm:text-base">ከፍተኛ ደሞዝ + ኮሚሽን</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">መነሻ 12,000 ብር ቋሚ ደሞዝ ሲኖረው በሽያጭ አፈጻጸምዎ መሰረት እስከ 25,000+ ብር የማግኘት እድል አለዎት።</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <h4 class="font-bold text-white text-sm sm:text-base">ተፈላጊ መስፈርቶች (ቀላል)</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">ዕድሜ 18+ የሆነ፣ ከሰዎች ጋር በቀላሉ መግባባት የሚችል/የምትችል፣ ለስራ ታታሪ እና ስማርት ስልክ መጠቀም የሚችል።</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</div>
+          <div>
+            <h4 class="font-bold text-white text-sm sm:text-base">የመከታተያ ቁጥር ለምን ያስፈልጋል?</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">ለቃለ-መጠይቅ (Interview) ሲመጡ ወይም በስልክ ስንደውልልዎ ቅድሚያ ለማግኘት የራስዎ መለያ ቁጥር ያስፈልግዎታል።</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECOND MID-PAGE CTA -->
+    <section class="pt-1 pb-4 text-center">
+      <button 
+        onclick="openTrackingModal()" 
+        class="cta-primary w-full rounded-2xl py-4 px-6 text-white font-black text-lg sm:text-xl shadow-xl flex items-center justify-center gap-2.5 active:scale-95 transition-transform cursor-pointer"
+      >
+        <span>አሁኑኑ መከታተያ ቁጥር ያግኙ</span>
+        <svg class="w-6 h-6 text-amber-300" fill="none" stroke="currentColor" stroke-width="2.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </button>
+    </section>
+
+  </main>
+
+  <!-- 7. STICKY BOTTOM MOBILE CONVERSION BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-40 bg-obsidian/95 backdrop-blur-xl border-t border-emerald-500/30 px-3.5 py-2.5 shadow-[0_-10px_30px_rgba(0,0,0,0.8)]">
+    <div class="max-w-lg mx-auto flex items-center justify-between gap-3">
+      <div class="shrink-0">
+        <div class="text-[10px] font-bold text-amber-400 uppercase">ቀሪ ሰዓት</div>
+        <div id="sticky-timer" class="font-mono text-sm sm:text-base font-black text-white">04:38:59</div>
+      </div>
+      <button 
+        onclick="openTrackingModal()" 
+        class="cta-primary flex-1 rounded-xl py-3 px-4 text-white font-black text-base sm:text-lg shadow-lg flex items-center justify-center gap-2 active:scale-95 transition-transform cursor-pointer"
+      >
+        <span>መከታተያ ቁጥር ያግኙ</span>
+        <svg class="w-5 h-5 text-amber-300 shrink-0" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- 8. INTERACTIVE TRACKING NUMBER GENERATOR MODAL -->
+  <div id="tracking-modal" class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-black/80 backdrop-blur-sm p-0 sm:p-4 transition-opacity">
+    <div class="glass-card bg-slate-900/95 w-full max-w-md rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 border-t sm:border border-emerald-500/40 shadow-2xl relative animate-slide-up">
+      
+      <!-- Close Button -->
+      <button onclick="closeTrackingModal()" aria-label="ዝጋ" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- STEP 1: QUICK FORM -->
+      <div id="modal-step-form" class="space-y-4">
+        <div class="text-center space-y-1 pt-1">
+          <span class="inline-block px-3 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-500/30">
+            ደረጃ 1 ከ 1 • ፈጣን ምዝገባ
+          </span>
+          <h3 class="text-xl sm:text-2xl font-black text-white">መከታተያ ቁጥርዎን ይውሰዱ</h3>
+          <p class="text-xs sm:text-sm text-slate-300">
+            ስምዎን እና ስልክ ቁጥርዎን ያስገቡ — ወዲያውኑ የእርስዎ ልዩ መለያ ቁጥር ይሰጥዎታል።
+          </p>
+        </div>
+
+        <form id="applicant-form" onsubmit="handleGenerateTracking(event)" class="space-y-3.5">
+          <div>
+            <label for="fullName" class="block text-xs font-bold text-slate-300 mb-1">ሙሉ ስምዎ (Full Name)</label>
+            <input 
+              type="text" 
+              id="fullName" 
+              required 
+              placeholder="ምሳሌ፡ አበበ ከበደ" 
+              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 px-4 py-3 text-white placeholder-slate-500 text-sm font-medium outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label for="phoneNumber" class="block text-xs font-bold text-slate-300 mb-1">ስልክ ቁጥር (Phone Number)</label>
+            <input 
+              type="tel" 
+              id="phoneNumber" 
+              required 
+              placeholder="0911... ወይም 07..." 
+              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/30 px-4 py-3 text-white placeholder-slate-500 text-sm font-mono font-bold outline-none transition"
+            />
+          </div>
+
+          <div>
+            <label for="subCity" class="block text-xs font-bold text-slate-300 mb-1">መኖሪያ አካባቢ (ክፍለ ከተማ)</label>
+            <select 
+              id="subCity" 
+              class="w-full rounded-xl bg-slate-950/90 border border-slate-700 focus:border-emerald-400 px-4 py-3 text-white text-sm font-medium outline-none transition"
+            >
+              <option value="ቦሌ">ቦሌ (Bole)</option>
+              <option value="የካ / መገናኛ">የካ / መገናኛ (Yeka / Megenagna)</option>
+              <option value="አራዳ / ፒያሳ">አራዳ / ፒያሳ (Arada / Piassa)</option>
+              <option value="ንፋስ ስልክ ላፍቶ">ንፋስ ስልክ ላፍቶ (Nifas Silk)</option>
+              <option value="ኮልፌ ቀራኒዮ">ኮልፌ ቀራኒዮ (Kolfe)</option>
+              <option value="ልደታ / ሜክሲኮ">ልደታ / ሜክሲኮ (Lideta / Mexico)</option>
+              <option value="አቃቂ ቃሊቲ">አቃቂ ቃሊቲ (Akaki Kality)</option>
+              <option value="ለሚ ኩራ / CMC">ለሚ ኩራ / CMC (Lemi Kura)</option>
+              <option value="ሌላ አካባቢ">ሌላ አካባቢ (Other)</option>
+            </select>
+          </div>
+
+          <p id="form-error" class="hidden text-xs text-rose-400 font-bold text-center"></p>
+
+          <button 
+            type="submit" 
+            class="cta-primary w-full rounded-xl py-3.5 px-5 text-white font-black text-lg shadow-lg flex items-center justify-center gap-2 cursor-pointer mt-2"
+          >
+            <span>መከታተያ ቁጥሬን አሳየኝ</span>
+            <svg class="w-5 h-5 text-amber-300" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- STEP 2: GENERATED TRACKING NUMBER RESULT -->
+      <div id="modal-step-result" class="hidden text-center space-y-4 pt-2">
+        <div class="w-16 h-16 rounded-full bg-emerald-500/20 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto shadow-[0_0_25px_rgba(16,185,129,0.4)]">
+          <svg class="w-9 h-9" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+
+        <div>
+          <h3 class="text-xl sm:text-2xl font-black text-white">እንኳን ደስ አለዎት!</h3>
+          <p id="result-greeting" class="text-xs sm:text-sm text-emerald-300 font-semibold mt-0.5">
+            ምዝገባዎ በተሳካ ሁኔታ ተጠናቋል።
+          </p>
+        </div>
+
+        <!-- Tracking Code Card -->
+        <div class="glass-gold rounded-2xl p-4 space-y-2">
+          <div class="text-[11px] font-bold text-amber-300 uppercase tracking-wider">የእርስዎ ልዩ የመከታተያ ቁጥር</div>
+          <div id="generated-code" class="font-mono text-3xl sm:text-4xl font-black text-white tracking-widest select-all">
+            SL-2026-8492
+          </div>
+          <button 
+            onclick="copyTrackingCode()" 
+            id="copy-btn"
+            class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-amber-400/40 text-xs font-bold text-amber-300 transition cursor-pointer"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+            <span id="copy-btn-text">ቁጥሩን ኮፒ አድርግ (Copy)</span>
+          </button>
+        </div>
+
+        <div class="bg-slate-950/80 rounded-2xl p-3.5 text-left space-y-1.5 border border-slate-800 text-xs text-slate-300">
+          <p class="font-bold text-white">ቀጣይ እርምጃ፦</p>
+          <p>1. ይህን የመከታተያ ቁጥር <strong class="text-amber-300">Screenshot</strong> ያንሱ ወይም Copy ያድርጉ።</p>
+          <p>2. የሰው ሃይል ባለሙያዎቻችን በቅርቡ በስልክ ቁጥርዎ ደውለው የቃለ-መጠይቅ ሰዓት ያሳውቁዎታል።</p>
+        </div>
+
+        <button 
+          onclick="closeTrackingModal()" 
+          class="w-full rounded-xl py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-sm transition cursor-pointer"
+        >
+          እሺ፣ ጨርሻለሁ
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+  <script>
+    // ==========================================
+    // 1. LIVE ANIMATED COUNTDOWN TIMER
+    // ==========================================
+    // Set a dynamic deadline ~4 hours 38 mins from initial load (persisted in sessionStorage so refresh doesn't reset suspiciously)
+    let deadlineTimestamp = sessionStorage.getItem('job_deadline_ts');
+    if (!deadlineTimestamp) {
+      const durationMs = ((4 * 3600) + (38 * 60) + 45) * 1000;
+      deadlineTimestamp = Date.now() + durationMs;
+      sessionStorage.setItem('job_deadline_ts', deadlineTimestamp);
+    } else {
+      deadlineTimestamp = parseInt(deadlineTimestamp, 10);
+    }
+
+    const elHours = document.getElementById('cd-hours');
+    const elMinutes = document.getElementById('cd-minutes');
+    const elSeconds = document.getElementById('cd-seconds');
+    const elMs = document.getElementById('cd-ms');
+    const elStickyTimer = document.getElementById('sticky-timer');
+
+    let lastSecond = -1;
+
+    function updateCountdown() {
+      const now = Date.now();
+      let diff = deadlineTimestamp - now;
+
+      // Reset gracefully if expired during session
+      if (diff <= 0) {
+        deadlineTimestamp = Date.now() + (2 * 3600 * 1000);
+        sessionStorage.setItem('job_deadline_ts', deadlineTimestamp);
+        diff = deadlineTimestamp - now;
+      }
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      const centiseconds = Math.floor((diff % 1000) / 10);
+
+      const hStr = String(hours).padStart(2, '0');
+      const mStr = String(minutes).padStart(2, '0');
+      const sStr = String(seconds).padStart(2, '0');
+      const msStr = String(centiseconds).padStart(2, '0');
+
+      elHours.textContent = hStr;
+      elMinutes.textContent = mStr;
+      elMs.textContent = msStr;
+
+      if (seconds !== lastSecond) {
+        elSeconds.textContent = sStr;
+        elSeconds.classList.remove('digit-pulse');
+        void elSeconds.offsetWidth; // trigger reflow
+        elSeconds.classList.add('digit-pulse');
+        elStickyTimer.textContent = `${hStr}:${mStr}:${sStr}`;
+        lastSecond = seconds;
+      }
+
+      requestAnimationFrame(updateCountdown);
+    }
+    requestAnimationFrame(updateCountdown);
+
+    // ==========================================
+    // 2. LIVE ANIMATED REGISTERED USERS COUNTER
+    // ==========================================
+    let registeredCount = parseInt(sessionStorage.getItem('registered_users_count') || '152', 10);
+    let spotsLeft = parseInt(sessionStorage.getItem('spots_left_count') || '1400', 10);
+
+    const elUsersCount = document.getElementById('live-users-count');
+    const elSpotsText = document.getElementById('spots-left-text');
+    const elCapacityBar = document.getElementById('capacity-bar');
+    const elActiveViewers = document.getElementById('active-viewers');
+
+    function renderStats() {
+      elUsersCount.textContent = registeredCount.toLocaleString();
+      elSpotsText.textContent = `${spotsLeft} ክፍት ቦታዎች ብቻ ቀርተዋል!`;
+      const pct = Math.min(97, Math.max(88, 100 - Math.floor(spotsLeft * 0.6)));
+      elCapacityBar.style.width = `${pct}%`;
+    }
+    renderStats();
+
+    // Increment registered users periodically with pulse effect
+    setInterval(() => {
+      registeredCount += 1;
+      sessionStorage.setItem('registered_users_count', registeredCount);
+      
+      elUsersCount.textContent = registeredCount.toLocaleString();
+      elUsersCount.classList.add('scale-110', 'text-amber-300');
+      setTimeout(() => {
+        elUsersCount.classList.remove('scale-110', 'text-amber-300');
+      }, 450);
+
+      // Fluctuate active viewers slightly
+      const viewers = 62 + Math.floor(Math.random() * 19);
+      elActiveViewers.textContent = viewers;
+    }, 6500);
+
+    // ==========================================
+    // 3. LIVE AMHARIC SOCIAL PROOF TOASTS
+    // ==========================================
+    const recentApplicants = [
+      { name: 'አቤል ከቦሌ', time: 'ልክ አሁን' },
+      { name: 'ሰላም ከፒያሳ', time: 'ከ 5 ሰከንድ በፊት' },
+      { name: 'ዳዊት ከመገናኛ', time: 'ከ 12 ሰከንድ በፊት' },
+      { name: 'ሜሮን ከሳር ቤት', time: 'ልክ አሁን' },
+      { name: 'ዮሐንስ ከሲኤምሲ (CMC)', time: 'ከ 18 ሰከንድ በፊት' },
+      { name: 'ብሩክታዊት ከሜክሲኮ', time: 'ከ 9 ሰከንድ በፊት' },
+      { name: 'ናሆም ከአያት', time: 'ልክ አሁን' },
+      { name: 'ትዕግስት ከካዛንቺስ', time: 'ከ 15 ሰከንድ በፊት' }
+    ];
+
+    let toastIdx = 0;
+    const toastContainer = document.getElementById('toast-container');
+    const toastText = document.getElementById('toast-text');
+    const toastTime = document.getElementById('toast-time');
+
+    function showSocialProofToast() {
+      const item = recentApplicants[toastIdx % recentApplicants.length];
+      toastText.textContent = `${item.name} አሁን መከታተያ ቁጥር ወስዷል/ወስዳለች ✅`;
+      toastTime.textContent = `${item.time} • የተረጋገጠ ምዝገባ`;
+
+      toastContainer.classList.remove('opacity-0', '-translate-y-4');
+      toastContainer.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toastContainer.classList.remove('opacity-100', 'translate-y-0');
+        toastContainer.classList.add('opacity-0', '-translate-y-4');
+      }, 3600);
+
+      toastIdx++;
+    }
+
+    // Start showing live notifications shortly after load
+    setTimeout(showSocialProofToast, 2200);
+    setInterval(showSocialProofToast, 8500);
+
+    // ==========================================
+    // 4. TRACKING NUMBER MODAL & GENERATOR
+    // ==========================================
+    const modal = document.getElementById('tracking-modal');
+    const stepForm = document.getElementById('modal-step-form');
+    const stepResult = document.getElementById('modal-step-result');
+    const formError = document.getElementById('form-error');
+
+    function openTrackingModal() {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      
+      // If user already generated a code in this session, show it right away
+      const savedCode = localStorage.getItem('user_tracking_code');
+      const savedName = localStorage.getItem('user_tracking_name');
+      if (savedCode && savedName) {
+        document.getElementById('generated-code').textContent = savedCode;
+        document.getElementById('result-greeting').textContent = `ሰላም ${savedName}፣ መከታተያ ቁጥርዎ ተዘጋጅቷል!`;
+        stepForm.classList.add('hidden');
+        stepResult.classList.remove('hidden');
+      } else {
+        stepForm.classList.remove('hidden');
+        stepResult.classList.add('hidden');
+      }
+    }
+
+    function closeTrackingModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    // Close modal if backdrop is clicked
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeTrackingModal();
+      }
+    });
+
+    function handleGenerateTracking(e) {
+      e.preventDefault();
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phoneNumber').value.trim();
+
+      if (fullName.length < 2) {
+        formError.textContent = 'እባክዎ ትክክለኛ ሙሉ ስምዎን ያስገቡ።';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      if (phone.length < 9) {
+        formError.textContent = 'እባክዎ ትክክለኛ ስልክ ቁጥር ያስገቡ (ምሳሌ፡ 0911...)።';
+        formError.classList.remove('hidden');
+        return;
+      }
+
+      formError.classList.add('hidden');
+
+      // Generate a unique realistic tracking number
+      const randomDigits = Math.floor(1000 + Math.random() * 9000);
+      const trackingCode = `SL-26-${randomDigits}`;
+
+      // Save locally so user doesn't lose their code
+      localStorage.setItem('user_tracking_code', trackingCode);
+      localStorage.setItem('user_tracking_name', fullName);
+
+      // Update live counters immediately for rewarding feedback
+      registeredCount += 1;
+      if (spotsLeft > 3) spotsLeft -= 1;
+      sessionStorage.setItem('registered_users_count', registeredCount);
+      sessionStorage.setItem('spots_left_count', spotsLeft);
+      renderStats();
+
+      // Display result
+      document.getElementById('generated-code').textContent = trackingCode;
+      document.getElementById('result-greeting').textContent = `ሰላም ${fullName}፣ ምዝገባዎ በተሳካ ሁኔታ ተጠናቋል!`;
+
+      stepForm.classList.add('hidden');
+      stepResult.classList.remove('hidden');
+    }
+
+    // Safe Clipboard Copy (Works inside iframes and mobile in-app browsers)
+    function copyTrackingCode() {
+      const codeText = document.getElementById('generated-code').textContent.trim();
+      const copyBtnText = document.getElementById('copy-btn-text');
+
+      const tempInput = document.createElement('textarea');
+      tempInput.value = codeText;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      tempInput.setSelectionRange(0, 99999);
+
+      try {
+        document.execCommand('copy');
+        copyBtnText.textContent = 'ኮፒ ተደርጓል! ✅';
+        setTimeout(() => {
+          copyBtnText.textContent = 'ቁጥሩን ኮፒ አድርግ (Copy)';
+        }, 2500);
+      } catch (err) {
+        copyBtnText.textContent = codeText;
+      }
+
+      document.body.removeChild(tempInput);
+    }
+  </script>
+</body>
+</html>
